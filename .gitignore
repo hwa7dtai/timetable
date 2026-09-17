@@ -1,0 +1,73 @@
+# ===== 操作系统产生的文件 =====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ===== 编辑器与 IDE =====
+.vscode/
+.idea/
+.vs/
+*.swp
+*.swo
+*.sublime-workspace
+*~
+
+# ===== 依赖目录 =====
+node_modules/
+bower_components/
+.venv/
+venv/
+env/
+.pnp/
+.pnp.js
+vendor/
+
+# ===== 构建产物与缓存 =====
+dist/
+build/
+out/
+target/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+*.tsbuildinfo
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ===== Java / .NET =====
+bin/
+obj/
+.gradle/
+*.class
+
+# ===== 日志与临时文件 =====
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+tmp/
+temp/
+*.tmp
+*.bak
+
+# ===== 环境变量与密钥（不要提交）=====
+.env
+.env.*
+!.env.example
+*.pem
+secrets.json
