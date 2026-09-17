@@ -4,7 +4,15 @@ import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
+/**
+ * 部署基路径。
+ * 部署在域名根目录时保持默认的 '/'；
+ * 部署在子路径（如 GitHub Pages 的 /timetable/）时由构建环境通过 VITE_BASE 指定。
+ */
+const base = process.env.VITE_BASE ?? '/'
+
 export default defineConfig({
+  base,
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -20,8 +28,8 @@ export default defineConfig({
         short_name: '课程表',
         description: '离线可用的个人课程表，支持起止周次与单双周',
         lang: 'zh-CN',
-        start_url: '/',
-        scope: '/',
+        start_url: base,
+        scope: base,
         display: 'standalone',
         display_override: ['standalone'],
         orientation: 'portrait',

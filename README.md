@@ -45,6 +45,38 @@ npm run icons        # 重新生成 PWA 图标
 
 构建产物是纯静态文件，部署到任意支持 HTTPS 的静态托管即可（PWA 安装与 Service Worker 都要求 HTTPS）。
 
+### GitHub Pages（推荐）
+
+仓库已包含 [.github/workflows/deploy.yml](.github/workflows/deploy.yml)，推送到 `main` 后会自动执行检查、测试、构建与发布。
+
+首次使用需要手动开启一次：
+
+1. 打开仓库的 **Settings → Pages**
+2. 把 **Source** 设为 **GitHub Actions**
+3. 推送到 `main`，等待 Actions 跑完
+
+站点地址为 `https://<用户名>.github.io/<仓库名>/`，本仓库即 `https://hwa7dtai.github.io/timetable/`。
+
+### 其他静态托管
+
+Cloudflare Pages、Netlify、Vercel 都支持直接连接 GitHub 仓库并自动构建（构建命令 `npm run build`，产物目录 `dist`），在国内访问 Cloudflare Pages 通常比 GitHub Pages 稳定。
+
+### 子路径部署
+
+部署在域名根目录时无需任何额外配置。部署在子路径（如 GitHub Pages 的 `/timetable/`）时，构建阶段需要指定基路径：
+
+```bash
+VITE_BASE=/timetable/ npm run build
+```
+
+Windows PowerShell 下写成：
+
+```powershell
+$env:VITE_BASE='/timetable/'; npm.cmd run build
+```
+
+`vite.config.ts` 会把该值用于资源路径、PWA manifest 的 `start_url` 与 `scope`，Actions 工作流已经自动带上这个变量。
+
 ## 目录结构
 
 ```
