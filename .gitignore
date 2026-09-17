@@ -31,6 +31,7 @@ vendor/
 
 # ===== 构建产物与缓存 =====
 dist/
+dev-dist/
 build/
 out/
 target/
@@ -39,6 +40,11 @@ target/
 .cache/
 .parcel-cache/
 *.tsbuildinfo
+
+# ===== 测试产物 =====
+playwright-report/
+test-results/
+coverage/
 
 # ===== Python =====
 __pycache__/
