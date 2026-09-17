@@ -33,6 +33,7 @@ npm run lint         # 代码检查
 npm run typecheck    # 类型检查
 npm run test         # 单元与组件测试
 npm run test:e2e     # 端到端测试（首次需 npx playwright install chromium）
+npm run test:live    # 部署冒烟测试：检查线上站点是否可用
 npm run icons        # 重新生成 PWA 图标
 ```
 

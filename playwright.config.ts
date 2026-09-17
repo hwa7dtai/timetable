@@ -4,6 +4,8 @@ const PORT = 4173
 
 export default defineConfig({
   testDir: './tests/e2e',
+  // live.spec.ts 针对线上站点运行，由 playwright.live.config.ts 单独驱动
+  testIgnore: 'live.spec.ts',
   timeout: 30_000,
   fullyParallel: true,
   reporter: [['list']],
