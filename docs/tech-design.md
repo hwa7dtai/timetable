@@ -83,6 +83,7 @@ timetable/
 │  │  ├─ types.ts                # 领域模型类型定义
 │  │  ├─ date.ts                 # 本地日期解析/格式化/星期计算
 │  │  ├─ week.ts                 # 周次计算、单双周判定
+│  │  ├─ courses.ts              # 课程查询
 │  │  ├─ schedule.ts             # 按周/按天筛选、课程展开
 │  │  ├─ conflict.ts             # 冲突检测
 │  │  └─ now.ts                  # 今日课程、当前课、下一节课
@@ -96,6 +97,8 @@ timetable/
 │  │  ├─ useClock.ts             # 实时时钟
 │  │  ├─ useTimetable.ts         # 课表数据的增删改查与持久化
 │  │  └─ useSettings.ts          # 学期设置、节次时间表
+│  ├─ utils/
+│  │  └─ id.ts                   # 本地 ID 生成
 │  ├─ components/                # 网格、单元格、表单、详情弹层等
 │  ├─ views/                     # 今日 / 课表 / 编辑 / 设置 / 数据
 │  ├─ styles/
@@ -103,6 +106,8 @@ timetable/
 ├─ tests/
 │  ├─ unit/                      # 领域层与 composables
 │  └─ e2e/                       # Playwright
+├─ scripts/
+│  └─ generate-icons.mjs         # 生成 PWA 图标
 ├─ index.html
 ├─ vite.config.ts
 ├─ vitest.config.ts
